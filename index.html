@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Lab｜互動式程式學習</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">Py</span>
+      <span>Python Lab</span>
+    </div>
+    <span class="top-label">互動式程式學習平台</span>
+  </header>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <p class="small-title">LEARNING PATH</p>
+      <h2>Python 學習課程</h2>
+      <p class="sidebar-description">
+        從基礎語法開始，逐步學習類別與物件。
+      </p>
+
+      <div id="lessonList"></div>
+
+      <div class="sidebar-tip">
+        <strong>操作提示</strong>
+        <p>Tab：輸入 4 個空白</p>
+        <p>Command + Enter：執行 Python</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <section class="intro">
+        <span class="chapter-label">PYTHON INTERACTIVE COURSE</span>
+        <h1 id="lessonTitle"></h1>
+        <p id="lessonDescription"></p>
+
+        <div class="concept-box">
+          <strong>本課重點</strong>
+          <p id="lessonConcept"></p>
+        </div>
+      </section>
+
+      <section class="practice-grid">
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-number">01</span>
+              <strong>參考程式碼</strong>
+            </div>
+            <button id="toggleReference" class="small-button">
+              隱藏範例
+            </button>
+          </div>
+
+          <pre id="referenceCode" class="reference-code"></pre>
+
+          <div class="panel-footer">
+            觀察程式結構，然後在右側自行輸入。
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <span class="panel-number">02</span>
+              <strong>程式練習區</strong>
+            </div>
+            <span class="language-label">Python 3</span>
+          </div>
+
+          <textarea
+            id="codeEditor"
+            spellcheck="false"
+            autocomplete="off"
+            autocapitalize="off"
+            placeholder="在這裡輸入 Python 程式碼..."
+          ></textarea>
+
+          <div id="feedback" class="feedback">
+            請開始輸入程式碼。
+          </div>
+
+          <div class="progress-info">
+            <span>打字練習進度</span>
+            <span id="progressPercent">0%</span>
+          </div>
+
+          <div class="progress-track">
+            <div id="progressFill"></div>
+          </div>
+
+          <div class="button-group">
+            <button id="checkButton" class="button secondary">
+              檢查答案
+            </button>
+            <button id="hintButton" class="button secondary">
+              提示
+            </button>
+            <button id="resetButton" class="button secondary">
+              重設
+            </button>
+            <button id="runButton" class="button primary">
+              ▶ 執行 Python
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="panel terminal-panel">
+        <div class="panel-header">
+          <div>
+            <span class="terminal-dot"></span>
+            <strong>Terminal｜執行結果</strong>
+          </div>
+          <span id="runtimeStatus">尚未執行</span>
+        </div>
+
+        <pre id="terminal">點擊「執行 Python」查看結果。</pre>
+      </section>
+
+      <div class="bottom-actions">
+        <span id="lessonCounter"></span>
+        <button id="nextButton" class="button primary">
+          下一個練習 →
+        </button>
+      </div>
+
+      <footer>
+        Python Lab · Python 類別與物件互動學習
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
